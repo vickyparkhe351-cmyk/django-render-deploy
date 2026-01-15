@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<style>
+/* ================= HERO / CAROUSEL ================= */
+.hero-slide {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+/* HERO TEXT */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+/* BRAND TITLE */
+.hero-content h1 {
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+}
+
+/* TAGLINE */
+.hero-content p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 28px;
+}
+
+/* CTA BUTTON */
+.hero-content a {
+    padding: 12px 36px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-title span {
+    color: #888;
+    font-size: 14px;
+}
+
+/* ================= COLLECTION CARDS ================= */
+.collection-card {
+    background: #0b0b0b;
+    border: 1px solid #1f1f1f;
+    transition: all 0.35s ease;
+}
+
+.collection-card img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+</style>
+
+<!-- ================= HERO SECTION ================= -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <!-- HERO SLIDE (ONLY ONE WITH TEXT) -->
+    <div class="carousel-item active hero-slide">
+      <img src="{% static 'images/avra_void1.png' %}" class="d-block w-100 hero-img">
+    </div>
+
+    <!-- IMAGE ONLY SLIDES -->
+    <div class="carousel-item hero-slide">
+      <img src="{% static 'images/avra_void2.png' %}" class="d-block w-100 hero-img">
+    </div>
+
+    <div class="carousel-item hero-slide">
+      <img src="{% static 'images/avra_void4.png' %}" class="d-block w-100 hero-img">
+    </div>
+
+  </div>
+
+  <!-- CONTROLS -->
+  <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
+
+<!-- ================= NEW COLLECTION ================= -->
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>NEW COLLECTION</h2>
+      <span>Designed for the modern street</span>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void6.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Minimal design meets bold street culture.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void5.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Crafted for those who define their own style.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void8.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Streetwear with purpose and presence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void9.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Premium fits designed for everyday wear.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void2.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Where confidence meets comfort.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card collection-card text-light">
+          <img src="{% static 'images/avra_void3.png' %}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Built for the bold, worn with attitude.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock body %}

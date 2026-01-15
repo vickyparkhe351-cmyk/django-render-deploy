@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Shop | AVRA VOID{% endblock %}
+
+{% block body %}
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:#fff;
+}
+
+/* SECTION */
+.shop-section{
+    min-height:100vh;
+    padding:80px 8%;
+}
+
+/* HEADER */
+.shop-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.shop-header h1{
+    font-size:48px;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.shop-header p{
+    margin-top:10px;
+    color:#999;
+    font-size:15px;
+}
+
+/* GRID */
+.shop-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+}
+
+/* CARD */
+.card{
+    position:relative;
+    height:480px;
+    border-radius:22px;
+    overflow:hidden;
+    cursor:pointer;
+    background:#111;
+    transition:all .5s ease;
+}
+
+.card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.1));
+}
+
+/* IMAGE */
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#fff;
+    color:#000;
+    padding:6px 16px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1px;
+    z-index:2;
+}
+
+/* CONTENT */
+.card-content{
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    z-index:2;
+}
+
+.card-content h3{
+    font-size:22px;
+    font-weight:600;
+}
+
+.card-content span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#ccc;
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 30px 60px rgba(0,0,0,.8);
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* LINK RESET */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .shop-header h1{
+        font-size:36px;
+    }
+}
+</style>
+
+<section class="shop-section">
+
+    <div class="shop-header">
+        <h1>SHOP AVRA VOID</h1>
+        <p>Choose your category</p>
+    </div>
+
+    <div class="shop-grid">
+
+        <!-- T-SHIRTS -->
+        <a href="/tshirts">
+            <div class="card">
+                <span class="badge">T-SHIRT</span>
+                <img src="{% static 'images/avra_void10.png' %}" alt="T-Shirts">
+                <div class="card-content">
+                    <h3>T-Shirt Collection</h3>
+                    <span>Minimal • Street • Premium</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- TRACKS -->
+        <a href="/tracks">
+            <div class="card">
+                <span class="badge">TRACK</span>
+                <img src="{% static 'images/avra_void11.png' %}" alt="Tracks">
+                <div class="card-content">
+                    <h3>Track Collection</h3>
+                    <span>Urban • Comfort • Power</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- JEANS -->
+        <a href="/jeans">
+            <div class="card">
+                <span class="badge">JEANS</span>
+                <img src="{% static 'images/avra_void12.png' %}" alt="Jeans">
+                <div class="card-content">
+                    <h3>Jeans Collection</h3>
+                    <span>Rugged • Bold • Timeless</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

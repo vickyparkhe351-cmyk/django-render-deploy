@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<style>
+
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 360px;
+  background: #121212;
+  border: 1px solid #2a2a2a;
+  padding: 40px 30px;
+}
+
+.brand {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.login-input {
+  width: 100%;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.login-btn {
+  width: 100%;
+  background: #4f5bd5;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #333;
+}
+
+.or-divider:not(:empty)::before {
+  margin-right: .75em;
+}
+
+.or-divider:not(:empty)::after {
+  margin-left: .75em;
+}
+
+.fb-login {
+  text-align: center;
+  color: #4f5bd5;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.forgot {
+  text-align: center;
+  font-size: 13px;
+}
+
+.signup-box {
+  width: 360px;
+  border: 1px solid #2a2a2a;
+  padding: 20px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.signup-box a {
+  color: #4f5bd5;
+  text-decoration: none;
+  font-weight: 600;
+}
+</style>
+
+<div class="login-page flex-column">
+
+  <!-- LOGIN BOX -->
+  <div class="login-box">
+    <div class="brand">AVRA VOID</div>
+
+    <form method="post">
+      {% csrf_token %}
+      <input class="login-input" type="text"
+             placeholder="Phone number, username, or email" required>
+
+      <input class="login-input" type="password"
+             placeholder="Password" required>
+
+      <button class="login-btn" >Log in</button>
+    </form>
+
+    <div class="or-divider">OR</div>
+
+    <div class="forgot">
+      <a href="/forgot-password/" class="text-secondary text-decoration-none">
+        Forgot password?
+      </a>
+    </div>
+  </div>
+
+  <!-- SIGN UP BOX -->
+  <div class="signup-box">
+    Don’t have an account?
+    <a href="/register/">Sign up</a>
+  </div>
+
+</div>
+{% endblock %}

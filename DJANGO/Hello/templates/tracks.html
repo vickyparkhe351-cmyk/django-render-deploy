@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tracks | AVRA VOID{% endblock %}
+
+{% block body %}
+
+<style>
+/* ================= TRACKS PAGE ================= */
+
+.product-card{
+    background:#0b0b0b;
+    border:1px solid #1f1f1f;
+    border-radius:14px;
+    overflow:hidden;
+    transition:all .35s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,.6);
+}
+
+/* IMAGE */
+.img-wrapper{
+    position:relative;
+    overflow:hidden;
+}
+
+.product-img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.product-card:hover .product-img{
+    transform:scale(1.08);
+}
+
+/* OVERLAY */
+.img-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.3s ease;
+}
+
+.product-card:hover .img-overlay{
+    opacity:1;
+}
+
+/* INFO */
+.product-info h6{
+    letter-spacing:0.5px;
+}
+
+.price{
+    color:#ccc;
+    font-size:14px;
+}
+
+/* SORT DROPDOWN */
+.form-select{
+    max-width:200px;
+}
+</style>
+
+<div class="container-fluid bg-dark text-light py-5">
+
+  <!-- HEADER -->
+  <div class="container mb-5 d-flex justify-content-between align-items-center">
+    <h2 class="fw-bold">Tracks</h2>
+    <select class="form-select bg-dark text-light border-secondary">
+      <option>Sort by</option>
+      <option>Price: Low to High</option>
+      <option>Newest</option>
+    </select>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- ROW 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void11.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Track Pants</h6>
+            <p class="price mb-0">₹1,999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void11.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Urban Track</h6>
+            <p class="price mb-0">₹2,099</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void11.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Power Track</h6>
+            <p class="price mb-0">₹1,899</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void16.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Street Track</h6>
+            <p class="price mb-0">₹2,199</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void16.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Classic Track</h6>
+            <p class="price mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void16.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Premium Track</h6>
+            <p class="price mb-0">₹2,299</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void17.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Sport Track</h6>
+            <p class="price mb-0">₹1,699</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void17.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Flex Track</h6>
+            <p class="price mb-0">₹2,049</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="product-card">
+          <div class="img-wrapper">
+            <img src="{% static 'images/avra_void17.png' %}" class="product-img">
+            <div class="img-overlay">
+              <a href="#" class="btn btn-outline-light btn-sm px-4">View Product</a>
+            </div>
+          </div>
+          <div class="product-info text-center p-3">
+            <h6 class="fw-bold mb-1">AVRA VOID Elite Track</h6>
+            <p class="price mb-0">₹2,399</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
